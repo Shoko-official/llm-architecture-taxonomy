@@ -36,6 +36,12 @@ Current neutral stubs:
 * `evaluation-layer.md`
 * `governance-layer.md`
 
+## Glossary
+
+Current placeholder:
+
+* `glossary.md`
+
 ## Current Limits
 
 Do not add taxonomy claims, layer definitions, diagrams, or paper-ready wording

@@ -2,4 +2,8 @@
 
 This directory is reserved for architecture taxonomy documentation.
 
-No taxonomy content is added during Milestone 0.
+Current notes:
+
+* `evidence-handoff.md`
+
+No final taxonomy content is added during Milestone 1.

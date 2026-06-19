@@ -23,6 +23,19 @@ Initial planning areas:
 This table is a planning scaffold. Future entries must stay neutral until
 supported by approved research ledger evidence.
 
+## Layer Stubs
+
+Current neutral stubs:
+
+* `model-layer.md`
+* `training-layer.md`
+* `inference-layer.md`
+* `retrieval-layer.md`
+* `memory-layer.md`
+* `agent-layer.md`
+* `evaluation-layer.md`
+* `governance-layer.md`
+
 ## Current Limits
 
 Do not add taxonomy claims, layer definitions, diagrams, or paper-ready wording

@@ -24,6 +24,7 @@ REQUIRED_FILES = [
     "taxonomy/README.md",
     "taxonomy/agent-layer.md",
     "taxonomy/evaluation-layer.md",
+    "taxonomy/glossary.md",
     "taxonomy/governance-layer.md",
     "taxonomy/inference-layer.md",
     "taxonomy/memory-layer.md",
@@ -65,6 +66,13 @@ FOUNDATION_MARKERS = {
         "# Evidence Handoff",
         "## Handoff Requirements",
         "## Readiness States",
+        "## Current Limits",
+    ],
+    "taxonomy/glossary.md": [
+        "# Glossary",
+        "## Future Entry Shape",
+        "## Current Entries",
+        "No glossary entries yet.",
         "## Current Limits",
     ],
 }

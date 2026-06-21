@@ -13,3 +13,14 @@ sources before paper use.
 * **Output Boundary**: Neutral placeholder for generated tokens, logits, and streaming metadata outputs.
 * **Internal Scope**: Placeholder boundary definitions for generation schedulers, cache managers, and batching algorithms.
 
+## Architecture Diagram
+
+```mermaid
+flowchart TD
+    Request[Serving Request] --> Batcher[Request Batcher]
+    Batcher --> Scheduler[Generation Scheduler]
+    Scheduler --> Cache[KV Cache Manager]
+    Cache --> Output[Response Tokens]
+```
+
+

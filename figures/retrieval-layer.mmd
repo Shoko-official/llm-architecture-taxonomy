@@ -1,0 +1,5 @@
+flowchart TD
+    Query[Search Query] --> KeyGen[Search Key Generator]
+    KeyGen --> Index[Vector Index Lookup]
+    Index --> Rank[Reranking Pipeline]
+    Rank --> Context[Context Passages]

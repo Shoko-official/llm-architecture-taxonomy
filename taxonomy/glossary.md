@@ -17,8 +17,6 @@ Future entries should include:
 
 ## Current Entries
 
-No glossary entries yet.
-
 | Term | Layer | State | Claim ID | Source ID | Definition / Notes |
 |---|---|---|---|---|---|
 | Attention | Model Layer | `planning` | N/A | N/A | Neutral placeholder definition for model attention mechanisms. |

@@ -23,4 +23,8 @@ flowchart TD
     Retention --> Read[Read/Write Retrieval]
 ```
 
+## Sub-layer Components
 
+* **Short-term Cache**: Neutral placeholder for short-term and conversational state caching.
+* **Episodic Cache**: Neutral placeholder for episodic and execution history caching.
+* **Long-term Cache**: Neutral placeholder for long-term and semantic retrieval caching.

@@ -72,7 +72,6 @@ FOUNDATION_MARKERS = {
         "# Glossary",
         "## Future Entry Shape",
         "## Current Entries",
-        "No glossary entries yet.",
         "## Current Limits",
     ],
 }
@@ -134,7 +133,14 @@ def validate_foundation_markers() -> None:
 
 
 def validate_layer_stubs() -> None:
-    required_markers = ["Draft status: Not drafted.", "Purpose:", "Evidence requirement:"]
+    required_markers = [
+        "Draft status: Not drafted.",
+        "Purpose:",
+        "Evidence requirement:",
+        "## Boundary Descriptions",
+        "## Architecture Diagram",
+        "```mermaid",
+    ]
     for relative_path in LAYER_STUB_FILES:
         text = read_text(ROOT / relative_path)
         missing_markers = [marker for marker in required_markers if marker not in text]
@@ -166,6 +172,9 @@ def validate_glossary_entries() -> None:
             if len(parts) >= 5 and parts[0] != "Term":
                 rows.append(parts)
                 
+    if not rows:
+        fail("taxonomy/glossary.md must contain at least one glossary entry.")
+        
     for row in rows:
         term, layer, state_raw, claim, source = row[0], row[1], row[2], row[3], row[4]
         state = state_raw.replace("`", "")

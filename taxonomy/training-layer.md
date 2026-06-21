@@ -13,3 +13,15 @@ from planning notes.
 * **Output Boundary**: Neutral placeholder for trained weights, checkpoints, and optimization curves.
 * **Internal Scope**: Placeholder boundary definitions for optimizers, loss functions, tokenization, and parameter updates.
 
+## Architecture Diagram
+
+```mermaid
+flowchart TD
+    RawData[Raw Datasets] --> Tokenization[Tokenization Process]
+    Tokenization --> Forward[Forward Pass]
+    Forward --> Loss[Loss Calculation]
+    Loss --> Backward[Backward Pass]
+    Backward --> Update[Optimizer Parameter Update]
+```
+
+

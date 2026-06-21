@@ -13,3 +13,13 @@ datasets, or benchmark sources.
 * **Output Boundary**: Neutral placeholder for metrics, reports, and validation outcomes.
 * **Internal Scope**: Placeholder boundary definitions for scoring algorithms, measurement metrics, and benchmarking routines.
 
+## Architecture Diagram
+
+```mermaid
+flowchart TD
+    Inputs[Model Outputs & Labels] --> Metrics[Scoring Metrics]
+    Metrics --> Benchmark[Benchmark Reference]
+    Benchmark --> Report[Validation Report]
+```
+
+

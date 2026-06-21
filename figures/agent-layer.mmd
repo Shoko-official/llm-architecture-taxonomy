@@ -1,0 +1,5 @@
+flowchart TD
+    Goal[User Goal] --> Planner[Internal Planning Logic]
+    Planner --> Router[Tool Router]
+    Router --> Invocation[Tool Invocation]
+    Invocation --> Execution[Task Execution Loop]

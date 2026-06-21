@@ -1,0 +1,5 @@
+flowchart TD
+    History[Conversation History] --> Serialization[History Serialization]
+    Serialization --> Storage[Storage Backend]
+    Storage --> Retention[Retention & Pruning Logic]
+    Retention --> Read[Read/Write Retrieval]

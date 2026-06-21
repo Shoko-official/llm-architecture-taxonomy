@@ -29,6 +29,7 @@ REQUIRED_FILES = [
     "taxonomy/inference-layer.md",
     "taxonomy/memory-layer.md",
     "taxonomy/model-layer.md",
+    "taxonomy/observability-layer.md",
     "taxonomy/retrieval-layer.md",
     "taxonomy/training-layer.md",
     "tests/README.md",
@@ -83,6 +84,7 @@ LAYER_STUB_FILES = [
     "taxonomy/inference-layer.md",
     "taxonomy/memory-layer.md",
     "taxonomy/model-layer.md",
+    "taxonomy/observability-layer.md",
     "taxonomy/retrieval-layer.md",
     "taxonomy/training-layer.md",
 ]
@@ -163,6 +165,7 @@ def validate_glossary_entries() -> None:
         "Agent Layer",
         "Evaluation Layer",
         "Governance Layer",
+        "Observability Layer",
     }
     
     rows = []

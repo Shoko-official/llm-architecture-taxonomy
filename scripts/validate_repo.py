@@ -191,6 +191,32 @@ def validate_glossary_entries() -> None:
             fail(f"Invalid Source ID format '{source}' for term '{term}' in glossary.md")
 
 
+def validate_sub_layer_components() -> None:
+    # Validate agent-layer sub-components
+    agent_text = read_text(ROOT / "taxonomy/agent-layer.md")
+    required_agent_markers = [
+        "## Sub-layer Components",
+        "* **Planner**:",
+        "* **Tool Executors**:",
+        "* **Trace**:",
+    ]
+    for marker in required_agent_markers:
+        if marker not in agent_text:
+            fail(f"taxonomy/agent-layer.md is missing expected sub-layer marker: {marker}")
+
+    # Validate memory-layer sub-components
+    memory_text = read_text(ROOT / "taxonomy/memory-layer.md")
+    required_memory_markers = [
+        "## Sub-layer Components",
+        "* **Short-term Cache**:",
+        "* **Episodic Cache**:",
+        "* **Long-term Cache**:",
+    ]
+    for marker in required_memory_markers:
+        if marker not in memory_text:
+            fail(f"taxonomy/memory-layer.md is missing expected sub-layer marker: {marker}")
+
+
 def lint_text() -> None:
     for path in iter_text_files():
         text = read_text(path)
@@ -204,6 +230,7 @@ def run_validate() -> None:
     validate_required_paths()
     validate_foundation_markers()
     validate_layer_stubs()
+    validate_sub_layer_components()
     validate_glossary_entries()
 
 

@@ -23,4 +23,8 @@ flowchart TD
     Invocation --> Execution[Task Execution Loop]
 ```
 
+## Sub-layer Components
 
+* **Planner**: Neutral placeholder for planning and reasoning sub-components.
+* **Tool Executors**: Neutral placeholder for executing tool calls and managing external actions.
+* **Trace**: Neutral placeholder for recording and inspecting execution traces.

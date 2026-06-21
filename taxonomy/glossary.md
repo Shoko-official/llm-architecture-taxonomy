@@ -27,6 +27,9 @@ Future entries should include:
 | Tool Call | Agent Layer | `ready` | claim-002 | source-jones-2025 | Neutral placeholder definition for external API usage. |
 | Accuracy Metric | Evaluation Layer | `blocked` | claim-003 | source-taylor-2026 | Neutral placeholder definition for measuring task success. |
 | Safety Filter | Governance Layer | `planning` | N/A | N/A | Neutral placeholder definition for operational control limits. |
+| Telemetry | Observability Layer | `planning` | N/A | N/A | Neutral placeholder definition for system observability and logging. |
+| Audit | Governance Layer | `planning` | N/A | N/A | Neutral placeholder definition for system usage auditing and trace storage. |
+| Policy | Governance Layer | `planning` | N/A | N/A | Neutral placeholder definition for access control and execution policy enforcement. |
 
 ## Current Limits
 

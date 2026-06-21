@@ -22,4 +22,10 @@ flowchart TD
     Filter --> Logs[Compliance Logs]
 ```
 
+## Sub-layer Components
+
+* **Access Controller**: Neutral placeholder for managing permissions and workspace isolation.
+* **Safety Filter**: Neutral placeholder for prompt injection scanning and output validation.
+* **Audit Logger**: Neutral placeholder for recording policy actions and compliance metrics.
+
 

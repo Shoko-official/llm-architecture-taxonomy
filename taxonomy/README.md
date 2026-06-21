@@ -19,6 +19,7 @@ Initial planning areas:
 | Agent Layer | Reserve space for agent and tool-use terms. | Not drafted |
 | Evaluation Layer | Reserve space for evaluation and measurement terms. | Not drafted |
 | Governance Layer | Reserve space for safety, policy, and operational control terms. | Not drafted |
+| Observability Layer | Reserve space for observability, tracing, and logging terms. | Not drafted |
 
 This table is a planning scaffold. Future entries must stay neutral until
 supported by approved research ledger evidence.
@@ -35,6 +36,7 @@ Current neutral stubs:
 * `agent-layer.md`
 * `evaluation-layer.md`
 * `governance-layer.md`
+* `observability-layer.md`
 
 ## Glossary
 

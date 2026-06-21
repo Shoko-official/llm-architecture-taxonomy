@@ -13,3 +13,14 @@ before becoming taxonomy content.
 * **Output Boundary**: Neutral placeholder for hidden states, output probabilities, and prediction outputs.
 * **Internal Scope**: Placeholder boundary definitions for model blocks, attention heads, layer norms, and parameter configurations.
 
+## Architecture Diagram
+
+```mermaid
+flowchart TD
+    Input[Input Tokens] --> Embeddings[Embedding Layer]
+    Embeddings --> Blocks[Transformer Blocks]
+    Blocks --> Norm[Layer Norm]
+    Norm --> Output[Output Probabilities]
+```
+
+

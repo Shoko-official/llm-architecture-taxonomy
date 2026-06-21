@@ -1,0 +1,5 @@
+flowchart TD
+    Input[Input Tokens] --> Embeddings[Embedding Layer]
+    Embeddings --> Blocks[Transformer Blocks]
+    Blocks --> Norm[Layer Norm]
+    Norm --> Output[Output Probabilities]

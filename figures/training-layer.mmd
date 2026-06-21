@@ -1,0 +1,6 @@
+flowchart TD
+    RawData[Raw Datasets] --> Tokenization[Tokenization Process]
+    Tokenization --> Forward[Forward Pass]
+    Forward --> Loss[Loss Calculation]
+    Loss --> Backward[Backward Pass]
+    Backward --> Update[Optimizer Parameter Update]

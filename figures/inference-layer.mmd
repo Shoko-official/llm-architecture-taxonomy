@@ -1,0 +1,5 @@
+flowchart TD
+    Request[Serving Request] --> Batcher[Request Batcher]
+    Batcher --> Scheduler[Generation Scheduler]
+    Scheduler --> Cache[KV Cache Manager]
+    Cache --> Output[Response Tokens]

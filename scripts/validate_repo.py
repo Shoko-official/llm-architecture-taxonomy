@@ -145,6 +145,43 @@ def validate_layer_stubs() -> None:
             )
 
 
+def validate_glossary_entries() -> None:
+    text = read_text(ROOT / "taxonomy/glossary.md")
+    allowed_states = {"planning", "evidence_needed", "candidate", "ready", "blocked"}
+    allowed_layers = {
+        "Model Layer",
+        "Training Layer",
+        "Inference Layer",
+        "Retrieval Layer",
+        "Memory Layer",
+        "Agent Layer",
+        "Evaluation Layer",
+        "Governance Layer",
+    }
+    
+    rows = []
+    for line in text.splitlines():
+        if line.startswith("|") and not line.startswith("|---"):
+            parts = [p.strip() for p in line.split("|")[1:-1]]
+            if len(parts) >= 5 and parts[0] != "Term":
+                rows.append(parts)
+                
+    for row in rows:
+        term, layer, state_raw, claim, source = row[0], row[1], row[2], row[3], row[4]
+        state = state_raw.replace("`", "")
+        
+        if layer not in allowed_layers:
+            fail(f"Invalid layer '{layer}' for term '{term}' in glossary.md")
+        if state not in allowed_states:
+            fail(f"Invalid readiness state '{state}' for term '{term}' in glossary.md")
+        
+        if claim != "N/A" and not re.match(r"^claim-\d+$", claim):
+            fail(f"Invalid Claim ID format '{claim}' for term '{term}' in glossary.md")
+            
+        if source != "N/A" and not re.match(r"^source-[A-Za-z0-9_\-]+$", source):
+            fail(f"Invalid Source ID format '{source}' for term '{term}' in glossary.md")
+
+
 def lint_text() -> None:
     for path in iter_text_files():
         text = read_text(path)
@@ -158,6 +195,7 @@ def run_validate() -> None:
     validate_required_paths()
     validate_foundation_markers()
     validate_layer_stubs()
+    validate_glossary_entries()
 
 
 def run_lint() -> None:

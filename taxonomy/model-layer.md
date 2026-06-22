@@ -9,9 +9,9 @@ before becoming taxonomy content.
 
 ## Boundary Descriptions
 
-* **Input Boundary**: Neutral placeholder for input tokens, embeddings, and forward pass options.
-* **Output Boundary**: Neutral placeholder for hidden states, output probabilities, and prediction outputs.
-* **Internal Scope**: Placeholder boundary definitions for model blocks, attention heads, layer norms, and parameter configurations.
+* **Input Boundary**: Maps incoming input token integers to dense vector embeddings combined with positional encodings, feeding them into the network blocks.
+* **Output Boundary**: Extracts the final layer's hidden states to compute logits representing the probability distribution over the vocabulary.
+* **Internal Scope**: Encompasses the stack of Transformer blocks containing multi-head self-attention, layer normalization, residual connections, and feed-forward networks.
 
 ## Architecture Diagram
 

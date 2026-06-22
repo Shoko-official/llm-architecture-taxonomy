@@ -9,9 +9,9 @@ from measured system behavior.
 
 ## Boundary Descriptions
 
-* **Input Boundary**: Neutral placeholder for operational policies, access controls, and safety filters.
-* **Output Boundary**: Neutral placeholder for policy decisions, compliance logs, and enforcement actions.
-* **Internal Scope**: Placeholder boundary definitions for policy validation, safety checks, and control enforcement modules.
+* **Input Boundary**: Intercept incoming client request parameters, user credentials, and tools execution requests at the gateway.
+* **Output Boundary**: Enforce safety decisions (block/allow prompt execution, tool execution limits) and write compliance reports.
+* **Internal Scope**: Validate access privileges, match inputs against injection patterns (Base64 decoders, roleplay framing, tool command blacklists), and monitor resource usage budgets.
 
 ## Architecture Diagram
 
@@ -24,8 +24,8 @@ flowchart TD
 
 ## Sub-layer Components
 
-* **Access Controller**: Neutral placeholder for managing permissions and workspace isolation.
-* **Safety Filter**: Neutral placeholder for prompt injection scanning and output validation.
-* **Audit Logger**: Neutral placeholder for recording policy actions and compliance metrics.
+* **Access Controller**: Enforce workspace separation rules and track token rate limits.
+* **Safety Filter**: Execute heuristic regex scanning, adversarial string checks, and base64 parsing on inputs and outputs.
+* **Audit Logger**: Log policy breaches, security actions, and compliance reports to non-repudiable databases.
 
 

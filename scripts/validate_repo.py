@@ -187,7 +187,7 @@ def validate_glossary_entries() -> None:
         if state not in allowed_states:
             fail(f"Invalid readiness state '{state}' for term '{term}' in glossary.md")
         
-        if claim != "N/A" and not re.match(r"^claim-\d+$", claim):
+        if claim != "N/A" and not re.match(r"^claim-[a-z0-9-]+$", claim):
             fail(f"Invalid Claim ID format '{claim}' for term '{term}' in glossary.md")
             
         if source != "N/A" and not re.match(r"^source-[A-Za-z0-9_\-]+$", source):
@@ -218,6 +218,18 @@ def validate_sub_layer_components() -> None:
     for marker in required_memory_markers:
         if marker not in memory_text:
             fail(f"taxonomy/memory-layer.md is missing expected sub-layer marker: {marker}")
+
+    # Validate observability-layer sub-components
+    obs_text = read_text(ROOT / "taxonomy/observability-layer.md")
+    required_obs_markers = [
+        "## Sub-layer Components",
+        "* **Span Tracer**:",
+        "* **Metric Exporter**:",
+        "* **Alert Manager**:",
+    ]
+    for marker in required_obs_markers:
+        if marker not in obs_text:
+            fail(f"taxonomy/observability-layer.md is missing expected sub-layer marker: {marker}")
 
 
 def lint_text() -> None:

@@ -9,9 +9,9 @@ research ledger evidence.
 
 ## Boundary Descriptions
 
-* **Input Boundary**: Neutral placeholder for collector endpoints and tracing context headers.
-* **Output Boundary**: Neutral placeholder for exported telemetry spans, logs, and alert triggers.
-* **Internal Scope**: Placeholder boundary definitions for span generation, event logging, and local metric counters.
+* **Input Boundary**: Capture function execution entries, API request headers carrying trace parent context (W3C Trace Context), and log parameters.
+* **Output Boundary**: Export trace spans and structured logs to standard JSON streams or remote OpenTelemetry collectors.
+* **Internal Scope**: Create spans hierarchically matching request execution operations, measure duration offsets, and format structured telemetry events.
 
 ## Architecture Diagram
 
@@ -24,6 +24,6 @@ flowchart TD
 
 ## Sub-layer Components
 
-* **Span Tracer**: Neutral placeholder for instrumentation, span creation, and tracing context.
-* **Metric Exporter**: Neutral placeholder for system telemetry collection and counter reporting.
-* **Alert Manager**: Neutral placeholder for processing logs and triggering operational alerts.
+* **Span Tracer**: Instrument components using trace contexts, instantiating parent-child span relationships with unique IDs.
+* **Metric Exporter**: Consolidate performance statistics like latency, tokens per second, and GPU queue lengths for operational reporting.
+* **Alert Manager**: Trigger alert events when latency thresholds are exceeded or model safety filters detect systematic violations.

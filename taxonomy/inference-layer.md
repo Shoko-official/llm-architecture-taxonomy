@@ -9,9 +9,9 @@ sources before paper use.
 
 ## Boundary Descriptions
 
-* **Input Boundary**: Neutral placeholder for incoming prompt tokens, generation parameters, and serving requests.
-* **Output Boundary**: Neutral placeholder for generated tokens, logits, and streaming metadata outputs.
-* **Internal Scope**: Placeholder boundary definitions for generation schedulers, cache managers, and batching algorithms.
+* **Input Boundary**: Consumes client HTTP serving requests containing the prompt string, generation hyperparameters (temperature, top_p), and max token limit.
+* **Output Boundary**: Streams generated token characters to clients via HTTP Server-Sent Events (SSE) or returns completed response JSON.
+* **Internal Scope**: Manages request batching (continuous/dynamic batching), scheduling token generation loops, and optimizing KV Cache allocation (e.g. using PagedAttention to prevent memory fragmentation).
 
 ## Architecture Diagram
 
